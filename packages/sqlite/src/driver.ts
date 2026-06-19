@@ -1,5 +1,4 @@
 import { existsSync } from "node:fs";
-import { createRequire } from "node:module";
 
 import {
   type Batch,
@@ -34,7 +33,6 @@ type DatabaseSync = {
 
 type DatabaseSyncConstructor = new (path: string) => DatabaseSync;
 
-const require = createRequire(import.meta.url);
 
 /** Options used to open the SQLite driver. */
 export interface SqliteDriverOptions {
@@ -79,7 +77,7 @@ export class SqliteDriver implements Driver {
 
     let DatabaseSync: DatabaseSyncConstructor;
     try {
-      ({ DatabaseSync } = require("node:sqlite") as { DatabaseSync: DatabaseSyncConstructor });
+      ({ DatabaseSync } = await import("node:sqlite") as { DatabaseSync: DatabaseSyncConstructor });
     } catch (error) {
       throw new YugenDbError({
         code: "UNSUPPORTED_FEATURE",
