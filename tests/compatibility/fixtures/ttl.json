@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "description": "TTL behaviour cases without requiring long waits.",
+  "cases": [
+    {
+      "name": "value before expiry",
+      "ttlMs": 60000,
+      "expectPresent": true
+    },
+    {
+      "name": "value after expiry",
+      "ttlMs": 0,
+      "expectPresent": false
+    },
+    {
+      "name": "exists after expiry",
+      "ttlMs": 0,
+      "expectExists": false
+    },
+    {
+      "name": "scan excludes expired values",
+      "expiredKey": "session_old",
+      "freshKey": "session_new",
+      "expectKeys": [
+        "session_new"
+      ]
+    },
+    {
+      "name": "allow/include expired option",
+      "ttlMs": 0,
+      "readOption": "allowExpired/includeExpired",
+      "expectCanReadExpired": true
+    }
+  ]
+}

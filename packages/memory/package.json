@@ -1,0 +1,49 @@
+{
+  "name": "@yugendb/memory",
+  "version": "0.1.0",
+  "description": "In-memory TypeScript yugendb driver.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "clean": "rm -rf dist coverage",
+    "format": "tsc --noEmit",
+    "test": "vitest run --config vitest.config.ts",
+    "typecheck": "tsc --noEmit",
+    "check": "pnpm typecheck && pnpm test",
+    "prepack": "pnpm build"
+  },
+  "dependencies": {
+    "@yugendb/core": "workspace:*"
+  },
+  "keywords": [
+    "database",
+    "key-value",
+    "memory",
+    "storage",
+    "typescript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/2rkf/yugendb.git",
+    "directory": "packages/memory"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false
+}

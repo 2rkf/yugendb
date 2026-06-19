@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "description": "Collection isolation cases.",
+  "cases": [
+    {
+      "name": "same key isolated by collection",
+      "namespace": "app",
+      "firstCollection": "users",
+      "secondCollection": "admins",
+      "key": "shared",
+      "firstValue": {
+        "kind": "user"
+      },
+      "expectSecondMissing": true
+    },
+    {
+      "name": "delete in one collection does not delete another collection",
+      "namespace": "app",
+      "firstCollection": "sessions",
+      "secondCollection": "tokens",
+      "key": "shared",
+      "expectSecondPresent": true
+    }
+  ]
+}

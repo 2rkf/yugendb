@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "description": "Batch operation cases.",
+  "cases": [
+    {
+      "name": "batch set",
+      "operations": [
+        {
+          "kind": "set",
+          "key": "a"
+        },
+        {
+          "kind": "set",
+          "key": "b"
+        }
+      ],
+      "expect": {
+        "setCount": 2,
+        "deleteCount": 0,
+        "appliedOperations": 2
+      }
+    },
+    {
+      "name": "batch delete",
+      "seedKeys": [
+        "a",
+        "b"
+      ],
+      "operations": [
+        {
+          "kind": "delete",
+          "key": "a"
+        }
+      ],
+      "expect": {
+        "deleteCount": 1,
+        "remainingKeys": [
+          "b"
+        ]
+      }
+    },
+    {
+      "name": "batch mixed set/delete",
+      "seedKeys": [
+        "old"
+      ],
+      "operations": [
+        {
+          "kind": "set",
+          "key": "new"
+        },
+        {
+          "kind": "delete",
+          "key": "old"
+        }
+      ],
+      "expect": {
+        "remainingKeys": [
+          "new"
+        ]
+      }
+    },
+    {
+      "name": "batch result counts",
+      "operations": [
+        {
+          "kind": "set",
+          "key": "a"
+        },
+        {
+          "kind": "delete",
+          "key": "missing"
+        }
+      ],
+      "expect": {
+        "appliedOperations": 2,
+        "deleteCount": 0
+      }
+    },
+    {
+      "name": "missing delete behaviour",
+      "operations": [
+        {
+          "kind": "delete",
+          "key": "missing"
+        }
+      ],
+      "expect": {
+        "deleted": false
+      }
+    }
+  ]
+}

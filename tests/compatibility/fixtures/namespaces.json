@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "description": "Namespace isolation cases.",
+  "cases": [
+    {
+      "name": "same collection and key isolated by namespace",
+      "firstNamespace": "tenant_a",
+      "secondNamespace": "tenant_b",
+      "collection": "users",
+      "key": "shared",
+      "firstValue": {
+        "tenant": "a"
+      },
+      "expectSecondMissing": true
+    },
+    {
+      "name": "delete in one namespace does not delete another namespace",
+      "firstNamespace": "tenant_a",
+      "secondNamespace": "tenant_b",
+      "collection": "sessions",
+      "key": "session_001",
+      "expectSecondPresent": true
+    }
+  ]
+}

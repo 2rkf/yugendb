@@ -1,0 +1,36 @@
+{
+  "name": "yugendb-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Typed key-value and document storage for Rust and TypeScript.",
+  "license": "MIT",
+  "packageManager": "pnpm@9.15.0",
+  "type": "module",
+  "scripts": {
+    "build": "pnpm -r build",
+    "check": "pnpm typecheck && pnpm test && pnpm build",
+    "clean": "pnpm -r clean",
+    "format": "pnpm -r format",
+    "test": "pnpm -r test",
+    "typecheck": "pnpm -r typecheck"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsup": "^8.3.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "keywords": [
+    "database",
+    "key-value",
+    "document",
+    "storage",
+    "typed"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/2rkf/yugendb.git"
+  },
+  "author": "2rkf"
+}

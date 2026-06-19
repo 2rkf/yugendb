@@ -1,0 +1,50 @@
+{
+  "name": "@yugendb/mysql",
+  "version": "0.1.0",
+  "description": "MySQL TypeScript driver for yugendb external-service storage.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "clean": "rm -rf dist coverage",
+    "format": "tsc --noEmit",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "check": "pnpm typecheck && pnpm test",
+    "prepack": "pnpm build"
+  },
+  "dependencies": {
+    "@yugendb/core": "workspace:*",
+    "mysql2": "^3.11.5"
+  },
+  "keywords": [
+    "database",
+    "key-value",
+    "document",
+    "storage",
+    "driver"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/2rkf/yugendb.git",
+    "directory": "packages/mysql"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false
+}

@@ -1,0 +1,29 @@
+[package]
+name = "yugendb-mongodb"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+license.workspace = true
+readme = "README.md"
+repository.workspace = true
+homepage.workspace = true
+documentation = "https://docs.rs/yugendb-mongodb"
+description = "MongoDB yugendb driver for document-backed storage."
+keywords.workspace = true
+categories.workspace = true
+exclude.workspace = true
+
+[dependencies]
+async-trait.workspace = true
+yugendb-core.workspace = true
+mongodb.workspace = true
+parking_lot.workspace = true
+chrono.workspace = true
+
+[dev-dependencies]
+tokio.workspace = true
+chrono.workspace = true
+
+[lints]
+workspace = true

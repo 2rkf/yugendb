@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "description": "Codec and typed value serialisation cases.",
+  "cases": [
+    {
+      "name": "valid JSON value",
+      "value": {
+        "id": "user_001",
+        "email": "reader@example.com"
+      },
+      "expectRoundTrip": true
+    },
+    {
+      "name": "nested JSON value",
+      "value": {
+        "profile": {
+          "displayName": "Reader",
+          "roles": [
+            "admin",
+            "user"
+          ]
+        }
+      },
+      "expectRoundTrip": true
+    },
+    {
+      "name": "array value",
+      "value": [
+        1,
+        2,
+        {
+          "ok": true
+        }
+      ],
+      "expectRoundTrip": true
+    },
+    {
+      "name": "null-like field inside object",
+      "value": {
+        "optional": null
+      },
+      "expectRoundTrip": true
+    },
+    {
+      "name": "deserialisation failure expectation",
+      "invalidBytes": "not-json",
+      "expectCode": "DESERIALISATION_ERROR"
+    },
+    {
+      "name": "serialisation failure expectation",
+      "valueKind": "unsupported cyclic structure",
+      "expectCode": "SERIALISATION_ERROR"
+    }
+  ]
+}

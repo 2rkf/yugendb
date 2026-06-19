@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "description": "Capability expectations for bundled yugendb drivers.",
+  "states": [
+    "supported",
+    "unsupported"
+  ],
+  "drivers": {
+    "memory": {
+      "transactions": "unsupported",
+      "ttl": "supported",
+      "prefixScan": "supported",
+      "atomicIncrement": "unsupported",
+      "batchWrite": "supported",
+      "rawSql": "unsupported",
+      "documentQuery": "unsupported",
+      "jsonQuery": "unsupported",
+      "migrations": "unsupported",
+      "connectionPooling": "unsupported",
+      "watch": "unsupported",
+      "backup": "unsupported"
+    },
+    "sqlite": {
+      "transactions": "supported",
+      "ttl": "supported",
+      "prefixScan": "supported",
+      "atomicIncrement": "unsupported",
+      "batchWrite": "supported",
+      "rawSql": "unsupported",
+      "documentQuery": "unsupported",
+      "jsonQuery": "unsupported",
+      "migrations": "supported",
+      "connectionPooling": "unsupported",
+      "watch": "unsupported",
+      "backup": "unsupported"
+    },
+    "postgres": {
+      "transactions": "supported",
+      "ttl": "supported",
+      "prefixScan": "supported",
+      "atomicIncrement": "unsupported",
+      "batchWrite": "supported",
+      "rawSql": "unsupported",
+      "documentQuery": "unsupported",
+      "jsonQuery": "unsupported",
+      "migrations": "supported",
+      "connectionPooling": "supported",
+      "watch": "unsupported",
+      "backup": "unsupported"
+    },
+    "mysql": {
+      "transactions": "supported",
+      "ttl": "supported",
+      "prefixScan": "supported",
+      "atomicIncrement": "unsupported",
+      "batchWrite": "supported",
+      "rawSql": "unsupported",
+      "documentQuery": "unsupported",
+      "jsonQuery": "unsupported",
+      "migrations": "supported",
+      "connectionPooling": "supported",
+      "watch": "unsupported",
+      "backup": "unsupported"
+    },
+    "mongodb": {
+      "transactions": "unsupported",
+      "ttl": "supported",
+      "prefixScan": "supported",
+      "atomicIncrement": "unsupported",
+      "batchWrite": "supported",
+      "rawSql": "unsupported",
+      "documentQuery": "unsupported",
+      "jsonQuery": "unsupported",
+      "migrations": "unsupported",
+      "connectionPooling": "supported",
+      "watch": "unsupported",
+      "backup": "unsupported"
+    },
+    "redis": {
+      "transactions": "unsupported",
+      "ttl": "supported",
+      "prefixScan": "supported",
+      "atomicIncrement": "unsupported",
+      "batchWrite": "supported",
+      "rawSql": "unsupported",
+      "documentQuery": "unsupported",
+      "jsonQuery": "unsupported",
+      "migrations": "unsupported",
+      "connectionPooling": "unsupported",
+      "watch": "unsupported",
+      "backup": "unsupported"
+    }
+  }
+}

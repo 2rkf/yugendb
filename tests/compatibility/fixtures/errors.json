@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "description": "Stable cross-language yugendb error code expectations.",
+  "codes": [
+    {
+      "code": "NOT_FOUND",
+      "retryable": false,
+      "guidance": "Required value was missing; callers may create it or stop requiring existence."
+    },
+    {
+      "code": "CONNECTION_ERROR",
+      "retryable": true,
+      "guidance": "Check backend availability and credentials."
+    },
+    {
+      "code": "SERIALISATION_ERROR",
+      "retryable": false,
+      "guidance": "Fix the value or codec used for serialisation."
+    },
+    {
+      "code": "DESERIALISATION_ERROR",
+      "retryable": false,
+      "guidance": "Check the requested type, stored bytes, and codec."
+    },
+    {
+      "code": "TIMEOUT",
+      "retryable": true,
+      "guidance": "Retry with backoff when the operation is safe to repeat."
+    },
+    {
+      "code": "CONFLICT",
+      "retryable": true,
+      "guidance": "Reload or adjust overwrite and transaction expectations."
+    },
+    {
+      "code": "TRANSACTION_ABORTED",
+      "retryable": true,
+      "guidance": "Retry the transaction when safe."
+    },
+    {
+      "code": "UNSUPPORTED_FEATURE",
+      "retryable": false,
+      "guidance": "Check driver capabilities before using the feature."
+    },
+    {
+      "code": "CONSTRAINT_VIOLATION",
+      "retryable": false,
+      "guidance": "Fix key, collection, namespace, or backend constraints."
+    },
+    {
+      "code": "INVALID_KEY",
+      "retryable": false,
+      "guidance": "Use a non-empty key without control characters."
+    },
+    {
+      "code": "INVALID_NAMESPACE",
+      "retryable": false,
+      "guidance": "Use a non-empty namespace without control characters."
+    },
+    {
+      "code": "INVALID_COLLECTION",
+      "retryable": false,
+      "guidance": "Use a non-empty collection without control characters."
+    },
+    {
+      "code": "INVALID_VALUE",
+      "retryable": false,
+      "guidance": "Fix the value or operation option."
+    },
+    {
+      "code": "DRIVER_ERROR",
+      "retryable": false,
+      "guidance": "Inspect driver details and backend logs."
+    },
+    {
+      "code": "INTERNAL_ERROR",
+      "retryable": false,
+      "guidance": "Report a yugendb bug with a minimal reproduction."
+    }
+  ],
+  "missingGetIsError": false
+}

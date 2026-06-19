@@ -1,0 +1,14 @@
+
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "noEmit": true,
+    "outDir": "dist",
+    "paths": {
+      "@yugendb/core": ["../../packages/core/src/index.ts"],
+      "@yugendb/memory": ["../../packages/memory/src/index.ts"]
+    }
+  },
+  "include": ["src/**/*.ts"]
+}

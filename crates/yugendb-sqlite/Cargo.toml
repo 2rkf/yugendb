@@ -1,0 +1,28 @@
+[package]
+name = "yugendb-sqlite"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+license.workspace = true
+readme = "README.md"
+repository.workspace = true
+homepage.workspace = true
+documentation = "https://docs.rs/yugendb-sqlite"
+description = "SQLite Rust driver for yugendb key-value and document storage."
+keywords.workspace = true
+categories.workspace = true
+exclude.workspace = true
+
+[dependencies]
+rusqlite.workspace = true
+parking_lot.workspace = true
+chrono.workspace = true
+async-trait.workspace = true
+yugendb-core.workspace = true
+
+[lints]
+workspace = true
+
+[dev-dependencies]
+tokio.workspace = true

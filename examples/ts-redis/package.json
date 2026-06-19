@@ -1,0 +1,26 @@
+{
+  "name": "ts-redis",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Simple TypeScript redis yugendb example.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit --project tsconfig.json",
+    "clean": "rm -rf dist",
+    "format": "tsc --noEmit --project tsconfig.json",
+    "start": "tsx src/index.ts",
+    "test": "vitest run --passWithNoTests",
+    "typecheck": "tsc --noEmit --project tsconfig.json",
+    "check": "pnpm typecheck && pnpm test"
+  },
+  "dependencies": {
+    "@yugendb/core": "workspace:*",
+    "@yugendb/redis": "workspace:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/2rkf/yugendb.git",
+    "directory": "examples/ts-redis"
+  }
+}

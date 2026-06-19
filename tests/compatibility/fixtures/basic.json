@@ -1,0 +1,100 @@
+{
+  "version": 1,
+  "description": "Shared basic storage behaviour for yugendb drivers.",
+  "missingValue": {
+    "rust": "Option<T>::None",
+    "typescript": "null"
+  },
+  "cases": [
+    {
+      "name": "set one value",
+      "namespace": "compat_basic",
+      "collection": "users",
+      "key": "user_001",
+      "value": {
+        "id": "user_001",
+        "email": "reader@example.com"
+      },
+      "expect": {
+        "get": {
+          "id": "user_001",
+          "email": "reader@example.com"
+        }
+      }
+    },
+    {
+      "name": "get one value",
+      "namespace": "compat_basic",
+      "collection": "users",
+      "key": "user_001",
+      "expect": {
+        "present": true
+      }
+    },
+    {
+      "name": "overwrite value",
+      "namespace": "compat_basic",
+      "collection": "users",
+      "key": "user_001",
+      "initial": {
+        "email": "old@example.com"
+      },
+      "replacement": {
+        "email": "new@example.com"
+      },
+      "expect": {
+        "email": "new@example.com"
+      }
+    },
+    {
+      "name": "missing value",
+      "namespace": "compat_basic",
+      "collection": "users",
+      "key": "missing_user",
+      "expect": {
+        "rust": null,
+        "typescript": null
+      }
+    },
+    {
+      "name": "delete existing value",
+      "namespace": "compat_basic",
+      "collection": "users",
+      "key": "user_001",
+      "expect": {
+        "deleted": true,
+        "presentAfterDelete": false
+      }
+    },
+    {
+      "name": "delete missing value",
+      "namespace": "compat_basic",
+      "collection": "users",
+      "key": "missing_user",
+      "expect": {
+        "deleted": false
+      }
+    },
+    {
+      "name": "exists true",
+      "namespace": "compat_basic",
+      "collection": "users",
+      "key": "user_002",
+      "value": {
+        "id": "user_002"
+      },
+      "expect": {
+        "exists": true
+      }
+    },
+    {
+      "name": "exists false",
+      "namespace": "compat_basic",
+      "collection": "users",
+      "key": "missing_user",
+      "expect": {
+        "exists": false
+      }
+    }
+  ]
+}

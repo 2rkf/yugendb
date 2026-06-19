@@ -1,0 +1,19 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "noEmit": true,
+    "outDir": "dist",
+    "paths": {
+      "@yugendb/core": [
+        "../../packages/core/src/index.ts"
+      ],
+      "@yugendb/mysql": [
+        "../../packages/mysql/src/index.ts"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*.ts"
+  ]
+}

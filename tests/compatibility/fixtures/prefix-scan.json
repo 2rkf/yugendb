@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "description": "Prefix scan behaviour cases.",
+  "cases": [
+    {
+      "name": "matching prefix",
+      "keys": [
+        "user_002",
+        "admin_001",
+        "user_001"
+      ],
+      "prefix": "user_",
+      "expectKeys": [
+        "user_001",
+        "user_002"
+      ]
+    },
+    {
+      "name": "non-matching prefix",
+      "keys": [
+        "user_001"
+      ],
+      "prefix": "session_",
+      "expectKeys": []
+    },
+    {
+      "name": "empty prefix",
+      "keys": [
+        "b",
+        "a"
+      ],
+      "prefix": "",
+      "expectKeys": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "name": "limit",
+      "keys": [
+        "user_003",
+        "user_001",
+        "user_002"
+      ],
+      "prefix": "user_",
+      "limit": 2,
+      "expectKeys": [
+        "user_001",
+        "user_002"
+      ]
+    },
+    {
+      "name": "deterministic ordering",
+      "keys": [
+        "c",
+        "a",
+        "b"
+      ],
+      "prefix": "",
+      "expectKeys": [
+        "a",
+        "b",
+        "c"
+      ]
+    },
+    {
+      "name": "expired values excluded by default where TTL is supported",
+      "prefix": "session_",
+      "expiredKey": "session_old",
+      "freshKey": "session_new",
+      "expectKeys": [
+        "session_new"
+      ]
+    }
+  ]
+}

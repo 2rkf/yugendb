@@ -1,0 +1,68 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/yugendb",
+    "crates/yugendb-core",
+    "crates/yugendb-memory",
+    "crates/yugendb-sqlite",
+    "crates/yugendb-mysql",
+    "crates/yugendb-mongodb",
+    "crates/yugendb-redis",
+    "crates/yugendb-postgres",
+    "examples/rust-basic",
+    "examples/rust-memory",
+    "examples/rust-sqlite",
+    "examples/rust-mysql",
+    "examples/rust-postgres",
+    "examples/rust-mongodb",
+    "examples/rust-redis",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.78"
+authors = ["2rkf"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/2rkf/yugendb"
+homepage = "https://github.com/2rkf/yugendb"
+documentation = "https://docs.rs/yugendb"
+description = "Typed key-value and document storage for Rust and TypeScript."
+keywords = ["database", "key-value", "document", "storage", "typed"]
+categories = ["database", "asynchronous"]
+exclude = ["tests/**", "benches/**", "examples/**", "*.sqlite", "*.zip"]
+
+[workspace.dependencies]
+async-trait = "0.1"
+
+base64 = "0.22"
+mongodb = { version = "2.8", default-features = false, features = ["tokio-runtime"] }
+redis = { version = "0.27", default-features = false, features = ["tokio-comp"] }
+sqlx = { version = "0.8", default-features = false, features = ["runtime-tokio-rustls", "postgres", "mysql", "chrono"] }
+bytes = "1"
+chrono = { version = "0.4", default-features = false, features = ["clock", "serde"] }
+parking_lot = "0.12"
+rusqlite = { version = "0.32", features = ["bundled"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "1"
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "sync"] }
+yugendb-core = { path = "crates/yugendb-core", version = "0.1.0" }
+yugendb-memory = { path = "crates/yugendb-memory", version = "0.1.0" }
+yugendb-sqlite = { path = "crates/yugendb-sqlite", version = "0.1.0" }
+yugendb-mysql = { path = "crates/yugendb-mysql", version = "0.1.0" }
+yugendb-mongodb = { path = "crates/yugendb-mongodb", version = "0.1.0" }
+yugendb-postgres = { path = "crates/yugendb-postgres", version = "0.1.0" }
+yugendb-redis = { path = "crates/yugendb-redis", version = "0.1.0" }
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+
+[workspace.lints.clippy]
+all = "warn"
+pedantic = "warn"
+module_name_repetitions = "allow"
+must_use_candidate = "allow"
+missing_errors_doc = "allow"
+missing_panics_doc = "allow"

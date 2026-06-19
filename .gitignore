@@ -1,0 +1,54 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+
+# Rust
+/target/
+Cargo.lock
+
+# Node.js
+node_modules/
+.pnpm-store/
+dist/
+coverage/
+*.tsbuildinfo
+
+# Package manager artefacts
+npm-packlist.json
+
+# SQLite and local databases
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+
+# Temporary files
+tmp/
+temp/
+.cache/
+
+# Bench output
+benches/**/target/
+benches/**/results/
+
+# Generated documentation
+docs/.vitepress/cache/
+docs/.vitepress/dist/

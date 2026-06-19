@@ -1,0 +1,31 @@
+[package]
+name = "yugendb-redis"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+license.workspace = true
+readme = "README.md"
+repository.workspace = true
+homepage.workspace = true
+documentation = "https://docs.rs/yugendb-redis"
+description = "Redis yugendb driver for key-value storage."
+keywords.workspace = true
+categories.workspace = true
+exclude.workspace = true
+
+[dependencies]
+async-trait.workspace = true
+yugendb-core.workspace = true
+base64.workspace = true
+redis.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+chrono.workspace = true
+
+[dev-dependencies]
+tokio.workspace = true
+chrono.workspace = true
+
+[lints]
+workspace = true
