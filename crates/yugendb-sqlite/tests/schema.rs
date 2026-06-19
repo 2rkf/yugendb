@@ -1,7 +1,7 @@
 use yugendb_core::Driver;
 use yugendb_sqlite::{
-    schema_statements, sqlite, sqlite_capabilities, SqliteDriver,
-    CREATE_EXPIRES_AT_INDEX_SQL, CREATE_PREFIX_INDEX_SQL, CREATE_STORE_TABLE_SQL, STORE_TABLE_NAME,
+    schema_statements, sqlite, sqlite_capabilities, SqliteDriver, CREATE_EXPIRES_AT_INDEX_SQL,
+    CREATE_PREFIX_INDEX_SQL, CREATE_STORE_TABLE_SQL, STORE_TABLE_NAME,
 };
 
 #[test]

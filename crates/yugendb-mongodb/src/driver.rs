@@ -209,8 +209,6 @@ pub const fn mongodb_capabilities() -> Capabilities {
     }
 }
 
-
-
 /// Convenience constructor for the MongoDB driver.
 #[must_use]
 pub fn mongodb(connection_string: impl Into<String>) -> MongoDbDriver {

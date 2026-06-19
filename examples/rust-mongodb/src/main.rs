@@ -1,7 +1,7 @@
 //! Simple MongoDB example for yugendb.
 
-use std::env;
 use serde::{Deserialize, Serialize};
+use std::env;
 use yugendb::drivers::mongodb::mongodb;
 use yugendb::prelude::*;
 

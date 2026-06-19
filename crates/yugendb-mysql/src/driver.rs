@@ -175,8 +175,6 @@ pub const fn mysql_capabilities() -> Capabilities {
     }
 }
 
-
-
 /// Convenience constructor for the MySQL driver.
 #[must_use]
 pub fn mysql(connection_string: impl Into<String>) -> MysqlDriver {

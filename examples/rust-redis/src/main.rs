@@ -1,7 +1,7 @@
 //! Simple Redis example for yugendb.
 
-use std::env;
 use serde::{Deserialize, Serialize};
+use std::env;
 use yugendb::drivers::redis::redis;
 use yugendb::prelude::*;
 

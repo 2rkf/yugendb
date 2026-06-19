@@ -174,8 +174,6 @@ pub const fn postgres_capabilities() -> Capabilities {
     }
 }
 
-
-
 /// Convenience constructor for the PostgreSQL driver.
 #[must_use]
 pub fn postgres(connection_string: impl Into<String>) -> PostgresDriver {

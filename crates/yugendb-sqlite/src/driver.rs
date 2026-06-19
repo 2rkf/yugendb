@@ -198,7 +198,6 @@ pub const fn sqlite_capabilities() -> Capabilities {
     }
 }
 
-
 /// Convenience constructor for the SQLite driver.
 #[must_use]
 pub fn sqlite(path: impl Into<String>) -> SqliteDriver {

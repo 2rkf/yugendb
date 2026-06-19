@@ -1,7 +1,7 @@
 use yugendb_core::Driver;
 use yugendb_mongodb::{
-    identity_index_fields, mongodb, mongodb_capabilities, MongoDbDriver,
-    STORAGE_COLLECTION_NAME, STORED_DOCUMENT_FIELDS,
+    identity_index_fields, mongodb, mongodb_capabilities, MongoDbDriver, STORAGE_COLLECTION_NAME,
+    STORED_DOCUMENT_FIELDS,
 };
 
 #[test]

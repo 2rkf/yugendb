@@ -189,8 +189,6 @@ pub const fn redis_capabilities() -> Capabilities {
     }
 }
 
-
-
 /// Convenience constructor for the Redis driver.
 pub fn redis(connection_string: impl Into<String>) -> Result<RedisDriver> {
     RedisDriver::new(connection_string)

@@ -1,7 +1,7 @@
 //! Simple MySQL example for yugendb.
 
-use std::env;
 use serde::{Deserialize, Serialize};
+use std::env;
 use yugendb::drivers::mysql::mysql;
 use yugendb::prelude::*;
 

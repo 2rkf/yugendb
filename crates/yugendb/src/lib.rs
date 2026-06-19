@@ -72,7 +72,9 @@ pub mod drivers {
     /// PostgreSQL driver exports.
     #[cfg(feature = "postgres")]
     pub mod postgres {
-        pub use yugendb_postgres::{postgres, postgres_capabilities, PostgresDriver, PostgresDriverOptions};
+        pub use yugendb_postgres::{
+            postgres, postgres_capabilities, PostgresDriver, PostgresDriverOptions,
+        };
     }
 
     /// Redis driver exports.
