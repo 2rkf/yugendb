@@ -52,3 +52,5 @@ benches/**/results/
 # Generated documentation
 docs/.vitepress/cache/
 docs/.vitepress/dist/
+
+PUBLISHING.md
