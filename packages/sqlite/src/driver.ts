@@ -33,6 +33,11 @@ type DatabaseSync = {
 
 type DatabaseSyncConstructor = new (path: string) => DatabaseSync;
 
+async function loadNodeSqlite(): Promise<{ DatabaseSync: DatabaseSyncConstructor }> {
+  const nodeSqliteSpecifier = "node:sqlite";
+  return await import(nodeSqliteSpecifier) as { DatabaseSync: DatabaseSyncConstructor };
+}
+
 
 /** Options used to open the SQLite driver. */
 export interface SqliteDriverOptions {
@@ -77,7 +82,7 @@ export class SqliteDriver implements Driver {
 
     let DatabaseSync: DatabaseSyncConstructor;
     try {
-      ({ DatabaseSync } = await import("node:sqlite") as { DatabaseSync: DatabaseSyncConstructor });
+      ({ DatabaseSync } = await loadNodeSqlite());
     } catch (error) {
       throw new YugenDbError({
         code: "UNSUPPORTED_FEATURE",
